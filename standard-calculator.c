@@ -41,11 +41,6 @@ double	ft_sqrt(double number)
 	double value = 1;
 	double epsilon = 1e-6;
 
-	if (x < 0)
-	{
-		printf("Error: Valid input");
-		return NAN;
-	}
 	while (x - value > epsilon)
 	{
 		x = (x + value) / 2;
@@ -138,7 +133,13 @@ int main()
 			printf("Multiplication: %.2f\n", multiplication(a, b));
 			break;
 		case 5:
-			printf("Square Root: %.2f\n", ft_sqrt(a));
+			if (a < 0)
+			{
+				printf("Error... Valid input.\n");
+				return -1;
+			}
+			else
+				printf("Square Root: %.2f\n", ft_sqrt(a));
 			break;
 		case 6:
 			printf("Power: %.2f\n", ft_pow(a, 2));
