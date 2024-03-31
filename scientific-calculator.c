@@ -42,12 +42,6 @@ double ft_sqrt(double number)
 	double value = 1;;
 	double epsilon = 1e-6;
 
-	// Check if the input is negative
-	if (x < 0)
-	{
-		printf("Error... Valid input.\n");
-		return NAN;
-	}
 	while (x - value > epsilon)
 	{
 		x = (x + value) / 2;
@@ -238,7 +232,13 @@ int main() {
 		case 5:
 			printf("Enter a number: ");
 			scanf("%lf", &a);
-			printf("Result: %lf\n", ft_sqrt(a));
+			if (a < 0)
+			{
+				printf("Error... Valid input.\n");
+				return -1;
+			}
+			else
+				printf("Result: %lf\n", ft_sqrt(a));
 			break;
 		case 6:
 			printf("Enter a number: ");
