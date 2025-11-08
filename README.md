@@ -52,7 +52,7 @@ cd python-calculator
 
 ### Run the Calculator
 ```bash
-python calculator.py
+python3 main.py
 ```
 
 `### Example Usage` 
